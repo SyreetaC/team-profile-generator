@@ -1,4 +1,4 @@
-const generateHTML = () => {
+const generateHTML = (createdTeam) => {
   console.log("HTML generated!");
 };
 

@@ -120,12 +120,12 @@ const generateEmployees = async () => {
   ];
 };
 
-// starter function to generate a manager first, then create the employees
+// starter function to generate a manager first, then create the employees, then use generated objects to create a HTML file
 const init = async () => {
   console.log("started");
   const createdManager = await generateManager();
   const createdEmployees = await generateEmployees();
-  generateHTML(createdManager, createdEmployees);
+  const createdTeam = generateHTML(createdManager, createdEmployees);
 };
 
 init();
