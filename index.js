@@ -108,7 +108,19 @@ const generateIntern = async () => {
   );
 };
 
-// starter function
+// function to create an employees array
+const generateEmployees = async () => {
+  const employeesChoice = [
+    {
+      type: "list",
+      message: "Select what other role you would like to add to your team:",
+      choices: ["Engineer", "Intern", "None"],
+      name: "employeeChoices",
+    },
+  ];
+};
+
+// starter function to generate a manager first, then create the employees
 const init = async () => {
   console.log("started");
   const createdManager = await generateManager();
