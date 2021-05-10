@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-const fs = require("fs");
+const fs = require("fs"); //WHY DON'T I NEED THIS?
 const generateHTML = require("./src/utils/generateHTML");
 
 // generateManager function to create a new instance of manager
