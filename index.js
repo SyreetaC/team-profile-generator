@@ -40,9 +40,43 @@ const generateManager = async () => {
   );
 };
 
+const generateEngineer = async () => {
+  const engineerQuestions = [
+    {
+      type: "input",
+      message: "Enter the engineer's name:",
+      name: "engineerName",
+    },
+    {
+      type: "input",
+      message: "Enter the engineer's employee ID:",
+      name: "engineerId",
+    },
+    {
+      type: "input",
+      message: "Enter the engineer's e-mail address:",
+      name: "engineerEmail",
+    },
+    {
+      type: "input",
+      message: "Enter the engineer's gitHub username:",
+      name: "engineerGitHubUsername",
+    },
+  ];
+
+  const engineerObject = await inquirer.prompt(engineerQuestions);
+  return new Engineer(
+    engineerObject.engineerName,
+    engineerObject.engineerID,
+    engineerObject.engineerEmail,
+    engineerObject.engineerGitHubUsername
+  );
+};
+
 const init = () => {
   console.log("started");
   generateManager();
+  generateEngineer();
   generateHTML();
 };
 
