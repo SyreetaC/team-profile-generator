@@ -5,28 +5,28 @@ const Intern = require("./lib/intern");
 const fs = require("fs");
 const generateHTML = require("./src/utils/generateHTML");
 
-// Returns a new instance of the manager class with the prompted managerQuestions
+// generateManager function to create a new instance of manager
 const generateManager = async () => {
   const managerQuestions = [
     {
       type: "input",
-      name: "managerName",
       message: "Enter the manager's name:",
+      name: "managerName",
     },
     {
       type: "input",
+      message: "Enter the manager employee ID:",
       name: "managerId",
-      message: "Enter the manager's employee ID:",
     },
     {
       type: "input",
+      message: "Enter the manager's email address:",
       name: "managerEmail",
-      message: "Enter the manager's e-mail address:",
     },
     {
       type: "input",
-      name: "managerOfficeNumber",
       message: "Enter the manager's office number:",
+      name: "managerOfficeNumber",
     },
   ];
 
