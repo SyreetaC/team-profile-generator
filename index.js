@@ -110,7 +110,7 @@ const generateIntern = async () => {
 
 // function to create an employees array
 const generateEmployees = async () => {
-  const employeesChoice = [
+  const employeeChoices = [
     {
       type: "list",
       message: "Select what other role you would like to add to your team:",
@@ -118,6 +118,8 @@ const generateEmployees = async () => {
       name: "employeeChoices",
     },
   ];
+
+  const employeeOptions = await inquirer.prompt(employeeChoices);
 };
 
 // starter function to generate a manager first, then create the employees, then use generated objects to create a HTML file
