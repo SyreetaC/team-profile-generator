@@ -40,6 +40,7 @@ const generateManager = async () => {
   );
 };
 
+// generateEngineer function to create a new instance of an engineer
 const generateEngineer = async () => {
   const engineerQuestions = [
     {
@@ -70,6 +71,40 @@ const generateEngineer = async () => {
     engineerObject.engineerID,
     engineerObject.engineerEmail,
     engineerObject.engineerGitHubUsername
+  );
+};
+
+// generateIntern function to create a new instance of an intern
+const generateIntern = async () => {
+  const internQuestions = [
+    {
+      type: "input",
+      message: "Enter the intern's name:",
+      name: "internName",
+    },
+    {
+      type: "input",
+      message: "Enter the intern's employee ID:",
+      name: "internId",
+    },
+    {
+      type: "input",
+      message: "Enter the intern's e-mail address:",
+      name: "internEmail",
+    },
+    {
+      type: "input",
+      message: "Enter the intern's school name:",
+      name: "internSchool",
+    },
+  ];
+
+  const internObject = await inquirer.prompt(internQuestions);
+  return new Intern(
+    internObject.internName,
+    internObject.internID,
+    internObject.internEmail,
+    internObject.internSchool
   );
 };
 
