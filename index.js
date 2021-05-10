@@ -108,11 +108,12 @@ const generateIntern = async () => {
   );
 };
 
-const init = () => {
+// starter function
+const init = async () => {
   console.log("started");
-  generateManager();
-  generateEngineer();
-  generateHTML();
+  const createdManager = await generateManager();
+  const createdEmployees = await generateEmployees();
+  generateHTML(createdManager, createdEmployees);
 };
 
 init();
