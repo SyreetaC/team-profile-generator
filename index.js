@@ -109,6 +109,7 @@ const generateIntern = async () => {
 };
 
 // function to create an employees array
+//TO BE COMPLETED
 const generateEmployees = async () => {
   const employeeChoices = [
     {
