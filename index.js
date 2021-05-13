@@ -68,7 +68,7 @@ const generateEngineer = async () => {
   const engineerObject = await inquirer.prompt(engineerQuestions);
   return new Engineer(
     engineerObject.engineerName,
-    engineerObject.engineerID,
+    engineerObject.engineerId,
     engineerObject.engineerEmail,
     engineerObject.engineerGitHubUsername
   );
@@ -111,23 +111,46 @@ const generateIntern = async () => {
 // function to create an employees array
 //TO BE COMPLETED
 const generateEmployees = async () => {
-  const employeeChoices = [
+  const teamArray = [];
+  const employeeChoiceQuestions = [
     {
       type: "list",
       message: "Select what other role you would like to add to your team:",
       choices: ["Engineer", "Intern", "None"],
-      name: "employeeChoices",
+      name: "employeeAnswer",
     },
   ];
+  //repeat employee choices question, for as many employees as a user wants
+  //finish and return object when none is replied
+  //return an array of employees
 
-  const employeeOptions = await inquirer.prompt(employeeChoices);
+  while (teamArray.length < 9) {
+    const employeeChoice = await inquirer.prompt(employeeChoiceQuestions);
+    switch (employeeChoice.employeeAnswer) {
+      case "Engineer":
+        const generatedEngineer = await generateEngineer();
+        teamArray.push(generatedEngineer);
+        break;
+      case "Intern":
+        const generatedIntern = await generateIntern();
+        teamArray.push(generatedIntern);
+        break;
+      case "None":
+      default:
+        //multiple options that have the same result
+        return teamArray;
+    }
+  }
+  console.log("You have added the maximum number of employees.");
+  return teamArray;
 };
 
 // starter function to generate a manager first, then create the employees, then use generated objects to create a HTML file
 const init = async () => {
-  console.log("started");
   const createdManager = await generateManager();
   const createdEmployees = await generateEmployees();
+  console.log(createdManager, createdEmployees);
+  //create team array with both manager and employees
   const createdTeam = generateHTML(createdManager, createdEmployees);
 };
 
