@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
-const Manager = require("./lib/manager");
-const Engineer = require("./lib/engineer");
-const Intern = require("./lib/intern");
+const Manager = require("./src/lib/Manager");
+const Engineer = require("./src/lib/Engineer");
+const Intern = require("./src/lib/Intern");
 const generateHTML = require("./src/utils/generateHTML");
 
 // generateManager function to create a new instance of manager
@@ -148,10 +148,8 @@ const generateEmployees = async () => {
 const init = async () => {
   const createdManager = await generateManager();
   const createdEmployees = await generateEmployees();
-  console.log(createdManager, createdEmployees);
-  //create team array with both manager and employees
-  const createdTeam = generateHTML(createdManager, createdEmployees);
-  console.log(createdTeam);
+  const team = [createdManager, createdEmployees];
+  generateHTML(team);
 };
 
 init();
