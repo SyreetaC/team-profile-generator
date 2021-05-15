@@ -2,7 +2,6 @@ const inquirer = require("inquirer");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-const fs = require("fs"); //WHY DON'T I NEED THIS?
 const generateHTML = require("./src/utils/generateHTML");
 
 // generateManager function to create a new instance of manager
@@ -102,7 +101,7 @@ const generateIntern = async () => {
   const internObject = await inquirer.prompt(internQuestions);
   return new Intern(
     internObject.internName,
-    internObject.internID,
+    internObject.internId,
     internObject.internEmail,
     internObject.internSchool
   );
@@ -152,6 +151,7 @@ const init = async () => {
   console.log(createdManager, createdEmployees);
   //create team array with both manager and employees
   const createdTeam = generateHTML(createdManager, createdEmployees);
+  console.log(createdTeam);
 };
 
 init();

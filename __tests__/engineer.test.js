@@ -8,3 +8,9 @@ test("can set name via constructor", () => {
   //assert
   expect(newEngineer.name).toBe(name);
 });
+
+test("can set ID via constructor", () => {
+  const id = "123";
+  const newEngineer = new Engineer(id);
+  expect(newEngineer.name).toBe(id);
+});
