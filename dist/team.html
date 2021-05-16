@@ -1,26 +1,4 @@
-const fs = require("fs");
-const generateManager = require("./generateManager");
-const generateEngineer = require("./generateEngineer");
-const generateIntern = require("./generateIntern");
-
-const generateHTML = (employees) => {
-  const generateCard = (employee) => {
-    if (employee.getJobRole() === "Manager") {
-      return generateManager(employee);
-    }
-
-    if (employee.getJobRole() === "Engineer") {
-      return generateEngineer(employee);
-    }
-
-    if (employee.getJobRole() === "Intern") {
-      return generateIntern(employee);
-    }
-  };
-
-  const employeesMarkup = employees.map(generateCard).join("\n");
-
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
       <head>
         <!-- Required meta tags -->
@@ -54,7 +32,59 @@ const generateHTML = (employees) => {
         </div>
 
         <div class="d-flex container justify-content-center flex-wrap">
-          ${employeesMarkup}
+          <div class="card text-white bg-primary m-3" style="max-width: 18rem">
+    <div class="card-header">
+      <h5 class="card-title">Bob</h5>
+      <h5 class="card-title">Manager</h5>
+    </div>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: 111</li>
+        <li class="list-group-item">
+          E-mail:
+          <a href="mary@manager.com">bob@email.com</a>
+        </li>
+        <li class="list-group-item">Office number: 111</li>
+      </ul>
+    </div>
+  </div>
+<div class="card text-white bg-primary m-3" style="max-width: 18rem">
+    <div class="card-header">
+      <h5 class="card-title">Alice</h5>
+      <h5 class="card-title">Engineer</h5>
+    </div>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: 222</li>
+        <li class="list-group-item">
+          E-mail:
+          <a href="bob@engineer.com">alice@email.com</a>
+        </li>
+        <li class="list-group-item">
+          gitHub account:
+          <a href="https://github.com/bob" , target="_blank">alice</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="card text-white bg-primary m-3" style="max-width: 18rem">
+    <div class="card-header">
+      <h5 class="card-title">Carol</h5>
+      <h5 class="card-title">Intern</h5>
+    </div>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: 333</li>
+        <li class="list-group-item">
+          E-mail:
+          <a href="john@intern.com">carol@email.com</a>
+        </li>
+        <li class="list-group-item">
+          School: School of Rock
+        </li>
+      </ul>
+    </div>
+  </div>
         </div>
 
         <script
@@ -74,7 +104,4 @@ const generateHTML = (employees) => {
           crossorigin="anonymous"
         ></script>
       </body>
-    </html>`;
-};
-
-module.exports = generateHTML;
+    </html>
