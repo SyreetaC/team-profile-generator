@@ -1,14 +1,12 @@
 const fs = require("fs");
-const Manager = require("../lib/Manager");
-const Employee = require("../lib/Employee");
-const Intern = require("../lib/Intern");
-const Engineer = require("../lib/Engineer");
 const generateManager = require("./generateManager");
 const generateEngineer = require("./generateEngineer");
+const generateIntern = require("./generateIntern");
 
-const generateHTML = (manager, team) => {
-  generateManager(Manager);
+const generateHTML = (team) => {
+  generateManager(team);
   generateEngineer(team);
+  generateIntern(team);
   writeToFile(html);
 };
 
