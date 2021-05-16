@@ -9,7 +9,7 @@ const generateIntern = (intern) => {
         <li class="list-group-item">ID: ${intern.id}</li>
         <li class="list-group-item">
           E-mail:
-          <a href="john@intern.com">${intern.email}</a>
+          <a href="mailto:${engineer.email}">${intern.email}</a>
         </li>
         <li class="list-group-item">
           School: ${intern.getSchool()}

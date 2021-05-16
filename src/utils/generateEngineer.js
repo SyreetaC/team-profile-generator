@@ -9,11 +9,11 @@ const generateEngineer = (engineer) => {
         <li class="list-group-item">ID: ${engineer.id}</li>
         <li class="list-group-item">
           E-mail:
-          <a href="bob@engineer.com">${engineer.email}</a>
+          <a href="mailto:${engineer.email}">${engineer.email}</a>
         </li>
         <li class="list-group-item">
           gitHub account:
-          <a href="https://github.com/bob" , target="_blank">${engineer.getGitHub()}</a>
+          <a href="https://github.com/${engineer.getGithub()}" , target="_blank">${engineer.getGitHub()}</a>
         </li>
       </ul>
     </div>

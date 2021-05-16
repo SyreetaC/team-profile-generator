@@ -9,7 +9,7 @@ const generateManager = (manager) => {
         <li class="list-group-item">ID: ${manager.id}</li>
         <li class="list-group-item">
           E-mail:
-          <a href="mary@manager.com">${manager.email}</a>
+          <a href="mailto:${manager.email}">${manager.email}</a>
         </li>
         <li class="list-group-item">Office number: ${manager.officeNumber}</li>
       </ul>
