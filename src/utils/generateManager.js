@@ -3,8 +3,10 @@ const Manager = require("../lib/Manager");
 const Employee = require("../lib/Employee");
 
 const generateManager = (team) => {
-  const manager = team[0];
-  generateManagerCard(manager);
+  const manager = team.map(generateEngineerCard);
+  if (manager === Manager) {
+    generateManagerCard(manager);
+  }
 };
 
 const generateManagerCard = (manager) => {
