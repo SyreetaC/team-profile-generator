@@ -1,4 +1,4 @@
-const Engineer = require("./engineer.test");
+const Engineer = require("../lib/Engineer");
 
 test("can set name via constructor", () => {
   //arrange

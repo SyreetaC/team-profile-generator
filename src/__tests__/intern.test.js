@@ -1,4 +1,4 @@
-const Intern = require("./intern.test");
+const Intern = require("../lib/Intern");
 
 test("can set name via constructor", () => {
   //arrange
@@ -12,5 +12,5 @@ test("can set name via constructor", () => {
 test("can set ID via constructor", () => {
   const id = "123";
   const newIntern = new Intern(id);
-  expect(newIntern.id).toBe(id);
+  expect(newIntern.name).toBe(id);
 });

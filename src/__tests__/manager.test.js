@@ -1,4 +1,4 @@
-const Manager = require("./manager.test");
+const Manager = require("../lib/Manager");
 
 test("can set name via constructor", () => {
   //arrange
@@ -10,7 +10,7 @@ test("can set name via constructor", () => {
 });
 
 test("can set ID via constructor", () => {
-  const id = "123";
-  const newManager = new Manager(id);
-  expect(newManager.id).toBe(id);
+  const Id = "123";
+  const newManager = new Manager(Id);
+  expect(newManager.Id).toBe(Id);
 });
