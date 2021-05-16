@@ -20,6 +20,9 @@ Testing can be run for each new employee class that is created to ensure each pa
 
 ## Demo video
 
+- Running application: https://drive.google.com/file/d/1rBTYRYYKh-rjW4yGy-efR1z1xMB-4Pki/view
+- Running tests: https://drive.google.com/file/d/1rBTYRYYKh-rjW4yGy-efR1z1xMB-4Pki/view
+
 ## Link to gitHub repository
 
 https://github.com/SyreetaC/team-profile-generator

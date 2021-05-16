@@ -13,7 +13,9 @@ const generateEngineer = (engineer) => {
         </li>
         <li class="list-group-item">
           gitHub account:
-          <a href="https://github.com/${engineer.getGithub()}" , target="_blank">${engineer.getGitHub()}</a>
+          <a href="https://github.com/${
+            engineer.gitHub
+          }" , target="_blank">${engineer.getGitHub()}</a>
         </li>
       </ul>
     </div>
