@@ -147,7 +147,7 @@ const generateEmployees = async () => {
 const init = async () => {
   const createdManager = await generateManager();
   const createdEmployees = await generateEmployees();
-  const team = [createdManager, createdEmployees];
+  const team = [createdManager, ...createdEmployees];
   generateHTML(team);
 };
 
