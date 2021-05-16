@@ -1,16 +1,27 @@
-const Manager = require("./manager.test");
+const Manager = require("../lib/Manager");
 
-test("can set name via constructor", () => {
-  //arrange
-  const name = "Bob";
-  //act
-  const newManager = new Manager(name);
-  //assert
-  expect(newManager.name).toBe(name);
-});
+describe("Manager Tests", () => {
+  test("should construct a new instance of Manager", () => {
+    const manager = new Manager("Bob", "123", "bob@email.com", "01211234567");
 
-test("can set ID via constructor", () => {
-  const id = "123";
-  const newManager = new Manager(id);
-  expect(newManager.id).toBe(id);
+    expect(manager).toBeInstanceOf(Manager);
+  });
+  test("should construct a new instance of a manager with name, id, email and office number", () => {
+    const manager = new Manager("Bob", "123", "bob@email.com", "01211234567");
+
+    expect(manager.name).toEqual("Bob");
+    expect(manager.id).toEqual("123");
+    expect(manager.email).toEqual("bob@email.com");
+    expect(manager.officeNumber).toEqual("01211234567");
+  });
+
+  test("should return office number", () => {
+    const manager = new Manager("Bob", "123", "bob@email.com", "01211234567");
+    expect(manager.getOfficeNumber()).toEqual("01211234567");
+  });
+
+  test("should return role", () => {
+    const manager = new Manager("Bob", "123", "bob@email.com", "01211234567");
+    expect(manager.getJobRole()).toEqual("Manager");
+  });
 });

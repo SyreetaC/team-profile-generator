@@ -1,16 +1,47 @@
-const Intern = require("./intern.test");
+const Intern = require("../lib/Intern");
 
-test("can set name via constructor", () => {
-  //arrange
-  const name = "Bob";
-  //act
-  const newIntern = new Intern(name);
-  //assert
-  expect(newIntern.name).toBe(name);
-});
+describe("Intern Tests", () => {
+  test("should construct a new instance of Intern", () => {
+    const intern = new Intern(
+      "Bob",
+      "123",
+      "bob@email.com",
+      "University of Birmingham"
+    );
 
-test("can set ID via constructor", () => {
-  const id = "123";
-  const newIntern = new Intern(id);
-  expect(newIntern.id).toBe(id);
+    expect(intern).toBeInstanceOf(Intern);
+  });
+  test("should construct a new instance of an intern with name, id, email and school", () => {
+    const intern = new Intern(
+      "Bob",
+      "123",
+      "bob@email.com",
+      "University of Birmingham"
+    );
+
+    expect(intern.name).toEqual("Bob");
+    expect(intern.id).toEqual("123");
+    expect(intern.email).toEqual("bob@email.com");
+    expect(intern.school).toEqual("University of Birmingham");
+  });
+
+  test("should return school", () => {
+    const intern = new Intern(
+      "Bob",
+      "123",
+      "bob@email.com",
+      "University of Birmingham"
+    );
+    expect(intern.getSchool()).toEqual("University of Birmingham");
+  });
+
+  test("should return role", () => {
+    const intern = new Intern(
+      "Bob",
+      "123",
+      "bob@email.com",
+      "University of Birmingham"
+    );
+    expect(intern.getJobRole()).toEqual("Intern");
+  });
 });
