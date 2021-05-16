@@ -3,6 +3,7 @@ const Manager = require("./src/lib/Manager");
 const Engineer = require("./src/lib/Engineer");
 const Intern = require("./src/lib/Intern");
 const generateHTML = require("./src/utils/generateHTML");
+const writeToFile = require("./src/utils/writeToFile");
 
 // generateManager function to create a new instance of manager
 const generateManager = async () => {
@@ -147,8 +148,9 @@ const generateEmployees = async () => {
 const init = async () => {
   const createdManager = await generateManager();
   const createdEmployees = await generateEmployees();
-  const team = [createdManager, ...createdEmployees];
-  generateHTML(team);
+  const employees = [createdManager, ...createdEmployees];
+  const html = generateHTML(employees);
+  writeToFile(html);
 };
 
 init();
