@@ -1,18 +1,24 @@
 const fs = require("fs");
-const manager = require("../lib/Manager");
-const employee = require("../lib/Employee");
-const intern = require("../lib/Intern");
-const engineer = require("../lib/Engineer");
+const Manager = require("../lib/Manager");
+const Employee = require("../lib/Employee");
+const Intern = require("../lib/Intern");
+const Engineer = require("../lib/Engineer");
 const generateManager = require("./generateManager");
 const generateEngineer = require("./generateEngineer");
 
-const generateHTML = (team) => {
-  generateManager(team);
+const generateHTML = (manager, team) => {
+  generateManager(Manager);
   generateEngineer(team);
-  //map through team array
-  //if statements based on getJobRole
-  //array.join of results of if statements
-  //create functions for different employee cards
+  writeToFile(html);
+};
+
+const writeToFile = (html) => {
+  try {
+    fs.writeFileSync("../team.html", html);
+    console.log("HTML created!");
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 module.exports = generateHTML;
