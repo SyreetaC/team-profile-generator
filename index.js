@@ -124,8 +124,8 @@ const generateEmployees = async () => {
   //return an array of employees
 
   while (teamArray.length < 9) {
-    const employeeChoice = await inquirer.prompt(employeeChoiceQuestions);
-    switch (employeeChoice.employeeAnswer) {
+    const { employeeAnswer } = await inquirer.prompt(employeeChoiceQuestions);
+    switch (employeeAnswer) {
       case "Engineer":
         const generatedEngineer = await generateEngineer();
         teamArray.push(generatedEngineer);

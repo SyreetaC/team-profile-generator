@@ -1,4 +1,3 @@
-const fs = require("fs");
 const generateManager = require("./generateManager");
 const generateEngineer = require("./generateEngineer");
 const generateIntern = require("./generateIntern");
