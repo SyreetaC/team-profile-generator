@@ -6,6 +6,7 @@ describe("Employee Tests", () => {
 
     expect(employee).toBeInstanceOf(Employee);
   });
+
   test("should construct a new instance of an employee with name, id and email", () => {
     const employee = new Employee("Bob", "123", "bob@email.com");
 
@@ -17,5 +18,20 @@ describe("Employee Tests", () => {
   test("should return role", () => {
     const employee = new Employee("Bob", "123", "bob@email.com");
     expect(employee.getJobRole()).toEqual("Employee");
+  });
+
+  test("should return name", () => {
+    const employee = new Employee("Bob", "123", "bob@email.com");
+    expect(employee.getName()).toEqual("Bob");
+  });
+
+  test("should return id", () => {
+    const employee = new Employee("Bob", "123", "bob@email.com");
+    expect(employee.getId()).toEqual("123");
+  });
+
+  test("should return email", () => {
+    const employee = new Employee("Bob", "123", "bob@email.com");
+    expect(employee.getEmail()).toEqual("bob@email.com");
   });
 });
